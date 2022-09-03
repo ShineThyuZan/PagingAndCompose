@@ -1,4 +1,4 @@
-package klt.mdy.offlinesupportwithpaging.component
+package klt.mdy.offlinesupportwithpaging.component.movie
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable

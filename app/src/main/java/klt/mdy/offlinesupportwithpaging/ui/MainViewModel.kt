@@ -5,7 +5,8 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 import dagger.hilt.android.lifecycle.HiltViewModel
 import klt.mdy.offlinesupportwithpaging.domain.Repository
-import klt.mdy.offlinesupportwithpaging.ui.udf.MainEvent
+import klt.mdy.offlinesupportwithpaging.ui.udf.MovieAction
+import klt.mdy.offlinesupportwithpaging.ui.udf.MovieEvent
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.launch
@@ -17,12 +18,18 @@ class MainViewModel @Inject constructor(
 ) : ViewModel() {
     val movies = repository.getMovies().cachedIn(viewModelScope)
 
-    private val _mainEvent = MutableSharedFlow<MainEvent>()
-    val mainEvent : SharedFlow<MainEvent> get() = _mainEvent
+    private val _movieEvent = MutableSharedFlow<MovieEvent>()
+    val movieEvent : SharedFlow<MovieEvent> get() = _movieEvent
 
-    fun onAction(id : Int) {
-        viewModelScope.launch {
-            _mainEvent.emit(MainEvent.ShowSnack(message = id.toString() ))
+    // action
+    fun onMovieAction(action : MovieAction){
+        when(action){
+            is MovieAction.ClickMovieItem ->{
+                viewModelScope.launch {
+                    _movieEvent.emit(MovieEvent.NavigateToMovieDetail( action.movieEntity))
+                    _movieEvent.emit(MovieEvent.ShowSnack(message = action.movieEntity.toString()))
+                }
+            }
         }
     }
 }

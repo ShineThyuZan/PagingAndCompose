@@ -23,7 +23,7 @@ fun SheetHeader(
         ) {
             Box(
                 modifier = modifier
-                    .width(MaterialTheme.dimen.base_8x)
+                    .width(MaterialTheme.dimen.extra_large)
                     .height(MaterialTheme.dimen.small)
                     .clip(CircleShape)
                     .background(color = MaterialTheme.colorScheme.onBackground)

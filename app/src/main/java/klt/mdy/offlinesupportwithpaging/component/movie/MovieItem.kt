@@ -1,4 +1,4 @@
-package klt.mdy.offlinesupportwithpaging.component
+package klt.mdy.offlinesupportwithpaging.component.movie
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import klt.mdy.offlinesupportwithpaging.R
 import klt.mdy.offlinesupportwithpaging.common.Endpoints
+import klt.mdy.offlinesupportwithpaging.component.SheetHeader
 import klt.mdy.offlinesupportwithpaging.model.MovieEntity
 
 
@@ -24,7 +25,7 @@ import klt.mdy.offlinesupportwithpaging.model.MovieEntity
 fun MovieItem(
     modifier: Modifier = Modifier,
     movie: MovieEntity,
-    onItemClick: (Int) -> Unit,
+    onItemClick: (MovieEntity) -> Unit,
 ) {
     Column(
         modifier = modifier
@@ -32,17 +33,16 @@ fun MovieItem(
             .clip(shape = RoundedCornerShape(12.dp))
             .padding(all = 12.dp)
             .clickable {
-                onItemClick(movie.movieId)
+                onItemClick(movie)
             },
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        SheetHeader()
         Text(
             modifier = modifier
                 .fillMaxWidth()
                 .padding(all = 8.dp),
             text = movie.originalTitle,
-            style = MaterialTheme.typography.h4
+            style = MaterialTheme.typography.subtitle1
         )
 
         movie.coverUrl?.let {
