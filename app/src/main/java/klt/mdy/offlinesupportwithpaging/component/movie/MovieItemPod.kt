@@ -57,7 +57,7 @@ fun MovieItemPod(
         )
         movie.coverUrl?.let { imageLink ->
             val imageUrl = rememberCoilPainter(
-                request = Endpoints.IMAGE_URL + imageLink,
+                request = Endpoints.MOVIE_IMAGE_URL + imageLink,
                 fadeIn = true
             )
             Image(

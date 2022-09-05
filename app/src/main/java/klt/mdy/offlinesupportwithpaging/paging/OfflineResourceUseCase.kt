@@ -6,14 +6,14 @@ import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
 import androidx.room.withTransaction
 import klt.mdy.offlinesupportwithpaging.data.local.MovieDatabase
-import klt.mdy.offlinesupportwithpaging.data.remote.ApiService
+import klt.mdy.offlinesupportwithpaging.di.network.api_layer.MovieApiService
 import klt.mdy.offlinesupportwithpaging.model.MovieEntity
 import klt.mdy.offlinesupportwithpaging.model.RemoteKeyEntity
 import timber.log.Timber
 
 @ExperimentalPagingApi
-class OfflineResource(
-    private val api: ApiService,
+class OfflineResourceUseCase(
+    private val api: MovieApiService,
     private val db: MovieDatabase
 ) : RemoteMediator<Int, MovieEntity>() {
 
@@ -53,7 +53,7 @@ class OfflineResource(
 
             Timber.tag("klt.currentPage").e(currentPage.toString())
 
-            val response = api.fetchMovies(page = currentPage)
+            val response = api.fetchMovie(page = currentPage)
             val result = response.results.map { it.toVo() }
             val endOfPaginationReached = result.isEmpty()
 

@@ -17,7 +17,6 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import klt.mdy.offlinesupportwithpaging.R
 import klt.mdy.offlinesupportwithpaging.common.Endpoints
-import klt.mdy.offlinesupportwithpaging.component.SheetHeader
 import klt.mdy.offlinesupportwithpaging.model.MovieEntity
 
 
@@ -47,7 +46,7 @@ fun MovieItem(
 
         movie.coverUrl?.let {
             AsyncImage(
-                model = Endpoints.IMAGE_URL + it,
+                model = Endpoints.MOVIE_IMAGE_URL + it,
                 contentDescription = "image",
                 contentScale = ContentScale.Crop,
                 modifier = modifier.aspectRatio(ratio = 2.0f),

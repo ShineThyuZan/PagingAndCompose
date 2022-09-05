@@ -45,7 +45,6 @@ fun MoviesContent(
     vm: MainViewModel,
 ) {
     val movies: LazyPagingItems<MovieEntity> = vm.movies.collectAsLazyPagingItems()
-
     val scaffoldState = rememberScaffoldState()
     LaunchedEffect(key1 = true) {
         vm.movieEvent.collectLatest {
@@ -65,7 +64,7 @@ fun MoviesContent(
                         ArgsConstants.MOVIE_VO,
                         movieParcel
                     )
-                    navController.navigate(AppDestination.MovieDetail.route)
+                    navController.navigate(AppDestination.TestApi.route)
                 }
             }
         }
@@ -103,10 +102,10 @@ fun MoviesContent(
                             loadState.refresh is LoadState.Error -> {
                                 val e = movies.loadState.refresh as LoadState.Error
                                 item {
-                                    /* RetryView(
-                                         message = e.error.localizedMessage ?: "Error",
-                                         onClickRetry = { retry() }
-                                     )*/
+                                    RetryView(
+                                        message = e.error.localizedMessage ?: "Error",
+                                        onClickRetry = { retry() }
+                                    )
                                     ShimmerView()
                                 }
                             }

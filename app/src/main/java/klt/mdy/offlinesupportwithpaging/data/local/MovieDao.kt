@@ -5,7 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import klt.mdy.offlinesupportwithpaging.common.Constants
+import klt.mdy.offlinesupportwithpaging.di.network.Constants
 import klt.mdy.offlinesupportwithpaging.model.MovieEntity
 
 @Dao

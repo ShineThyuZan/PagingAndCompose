@@ -19,7 +19,7 @@ fun FeedImage(
     imageUrl: String,
 ) {
     val postImage = rememberCoilPainter(
-        request = Endpoints.IMAGE_URL + imageUrl,
+        request = Endpoints.MOVIE_IMAGE_URL + imageUrl,
         fadeIn = true
     )
     Image(
@@ -41,7 +41,7 @@ fun ProfileImage(
     imageUrl: String,
 ) {
     val postImage = rememberCoilPainter(
-        request = Endpoints.IMAGE_URL + imageUrl,
+        request = Endpoints.MOVIE_IMAGE_URL + imageUrl,
         fadeIn = true
     )
     Image(

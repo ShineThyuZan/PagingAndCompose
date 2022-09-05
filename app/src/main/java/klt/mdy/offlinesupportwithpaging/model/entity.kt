@@ -2,7 +2,7 @@ package klt.mdy.offlinesupportwithpaging.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import klt.mdy.offlinesupportwithpaging.common.Constants
+import klt.mdy.offlinesupportwithpaging.di.network.Constants
 
 @Entity(tableName = Constants.MOVIE_TABLE)
 data class MovieEntity(

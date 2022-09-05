@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import klt.mdy.offlinesupportwithpaging.graph.RootNavGraph
+import klt.mdy.offlinesupportwithpaging.graph.movieNavGraph
 
 
 @RequiresApi(Build.VERSION_CODES.O)
@@ -17,6 +18,7 @@ fun MainScreen(navController: NavHostController) {
     Scaffold {
         Box(modifier = Modifier.padding(it)) {
             RootNavGraph(navController = navController)
+
         }
     }
 }
