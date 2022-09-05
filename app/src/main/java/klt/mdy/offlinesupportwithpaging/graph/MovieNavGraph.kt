@@ -40,7 +40,6 @@ fun NavGraphBuilder.movieNavGraph(
                 navController.previousBackStackEntry?.savedStateHandle?.get<MovieParcel>(
                     ArgsConstants.MOVIE_VO
                 )
-            Timber.tag("resultresult").d(result.toString())
             MovieDetailScreen(
                 navController = navController,
                 movieParcel = result ?: MovieParcel(),

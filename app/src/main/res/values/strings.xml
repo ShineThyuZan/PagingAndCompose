@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Movie City</string>
+    <string name="download">Download</string>
 </resources>

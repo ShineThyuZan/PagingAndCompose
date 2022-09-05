@@ -45,7 +45,6 @@ fun MoviesContent(
     vm: MainViewModel,
 ) {
     val movies: LazyPagingItems<MovieEntity> = vm.movies.collectAsLazyPagingItems()
-
     val scaffoldState = rememberScaffoldState()
     LaunchedEffect(key1 = true) {
         vm.movieEvent.collectLatest {

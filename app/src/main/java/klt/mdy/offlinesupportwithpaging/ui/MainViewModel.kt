@@ -24,10 +24,25 @@ class MainViewModel @Inject constructor(
     // action
     fun onMovieAction(action : MovieAction){
         when(action){
+
+            // movie list action
             is MovieAction.ClickMovieItem ->{
                 viewModelScope.launch {
                     _movieEvent.emit(MovieEvent.NavigateToMovieDetail( action.movieEntity))
                     _movieEvent.emit(MovieEvent.ShowSnack(message = action.movieEntity.toString()))
+                }
+            }
+            // detail screen action
+            MovieAction.ClickDownload -> {
+                viewModelScope.launch {
+                    _movieEvent.emit(MovieEvent.ShowSnack(message = "Saved"))
+                }
+            }
+            MovieAction.ClickMore ->{
+                viewModelScope.launch {
+                    _movieEvent.emit(
+                        MovieEvent.ShowDownloadSheet
+                    )
                 }
             }
         }

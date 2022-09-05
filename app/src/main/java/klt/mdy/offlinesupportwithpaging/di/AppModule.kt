@@ -52,6 +52,7 @@ object AppModule {
             .build()
     }
 
+
     @Provides
     @Singleton
     fun providesApiService(retrofit: Retrofit): ApiService {
