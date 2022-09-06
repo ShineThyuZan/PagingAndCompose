@@ -66,6 +66,9 @@ fun MoviesContent(
                     )
                     navController.navigate(AppDestination.TestApi.route)
                 }
+                MovieEvent.ShowDownloadSheet -> {
+
+                }
             }
         }
     }
