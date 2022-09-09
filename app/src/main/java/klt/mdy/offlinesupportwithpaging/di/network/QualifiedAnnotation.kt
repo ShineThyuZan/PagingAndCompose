@@ -38,6 +38,13 @@ object QualifiedAnnotation {
     @Qualifier
     annotation class MoviesRetrofit
 
+
+
+
+    @Retention(AnnotationRetention.BINARY)
+    @Qualifier
+    annotation class UserRetrofit
+
     //Datastore
     @Retention(AnnotationRetention.BINARY)
     @Qualifier

@@ -13,6 +13,7 @@ import klt.mdy.offlinesupportwithpaging.common.Endpoints
 import klt.mdy.offlinesupportwithpaging.data.local.MovieDatabase
 import klt.mdy.offlinesupportwithpaging.di.network.api_layer.AppApiService
 import klt.mdy.offlinesupportwithpaging.di.network.api_layer.MovieApiService
+import klt.mdy.offlinesupportwithpaging.di.network.api_layer.UserService
 import klt.mdy.offlinesupportwithpaging.di.network.db_layer.MovieDbRepository
 import klt.mdy.offlinesupportwithpaging.di.network.db_layer.MovieRepoDbImpl
 import okhttp3.OkHttpClient
@@ -42,7 +43,18 @@ object NetworkModule {
         return moviesRetrofit.create(MovieApiService::class.java)
     }
 
+    @Provides
+    @Singleton
+    fun provideUserApiService(
+        @QualifiedAnnotation.UserRetrofit userRetrofit: Retrofit
+    ): UserService {
+        return userRetrofit.create(UserService::class.java)
+    }
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // db
     @Provides
     @Singleton
     fun providesDatabase(@ApplicationContext context: Context): MovieDatabase {
@@ -55,7 +67,6 @@ object NetworkModule {
             .build()
     }
 
-    // this from db module
     @Provides
     @Singleton
     fun providesRepository(
@@ -68,6 +79,10 @@ object NetworkModule {
         )
     }
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // meme base url
     @Provides
     @Singleton
     @QualifiedAnnotation.AppRetrofit
@@ -81,6 +96,8 @@ object NetworkModule {
             .build()
     }
 
+
+    // movie base url
     @Provides
     @Singleton
     @QualifiedAnnotation.MoviesRetrofit
@@ -94,6 +111,22 @@ object NetworkModule {
             .build()
     }
 
+
+    // chat app base url
+    @Provides
+    @Singleton
+    @QualifiedAnnotation.UserRetrofit
+    fun provideUserRetrofit(
+        okHttpClient: OkHttpClient
+    ): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(Endpoints.USER_BASE_URL)
+            .client(okHttpClient)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Provides
     @Singleton

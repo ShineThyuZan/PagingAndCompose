@@ -2,7 +2,7 @@ package klt.mdy.offlinesupportwithpaging.di.network.api_layer
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import klt.mdy.offlinesupportwithpaging.model.MovieEntity
+import klt.mdy.offlinesupportwithpaging.model.movie.MovieEntity
 import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject

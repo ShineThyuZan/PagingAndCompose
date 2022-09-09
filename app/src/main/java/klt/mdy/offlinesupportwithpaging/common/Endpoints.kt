@@ -12,4 +12,8 @@ object Endpoints {
     const val MOVIES_UPCOMING = "movie/upcoming"
     const val MOVIES_POPULAR = "movie/popular"
     const val MOVIE_API_KEY = "cdbea55de27a909b4aaa2cfc02eabb75"
+
+    const val USER_BASE_URL = "http://192.168.100.100:8080/"
+    const val PROFILE_INFO = "socialapp/profile/info"
+
 }

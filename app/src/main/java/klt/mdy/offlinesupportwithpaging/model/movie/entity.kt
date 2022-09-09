@@ -1,4 +1,4 @@
-package klt.mdy.offlinesupportwithpaging.model
+package klt.mdy.offlinesupportwithpaging.model.movie
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

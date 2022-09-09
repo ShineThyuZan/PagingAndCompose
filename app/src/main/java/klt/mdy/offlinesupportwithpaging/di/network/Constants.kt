@@ -10,4 +10,8 @@ object Constants {
     const val DB_NAME = "offlinedb"
     const val MOVIE_TABLE = "movietable"
     const val REMOTE_KEY_TABLE = "remotekeytable"
+
+
+    const val RESPONSE_SUCCESS = "SUCCESS"
+    const val RESPONSE_FAIL = "FAIL"
 }

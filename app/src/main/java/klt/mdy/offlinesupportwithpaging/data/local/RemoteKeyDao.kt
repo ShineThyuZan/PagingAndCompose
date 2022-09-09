@@ -5,7 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import klt.mdy.offlinesupportwithpaging.di.network.Constants
-import klt.mdy.offlinesupportwithpaging.model.RemoteKeyEntity
+import klt.mdy.offlinesupportwithpaging.model.movie.RemoteKeyEntity
 
 @Dao
 interface RemoteKeyDao {

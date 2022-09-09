@@ -27,7 +27,7 @@ import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import klt.mdy.offlinesupportwithpaging.R
 import klt.mdy.offlinesupportwithpaging.common.Endpoints
-import klt.mdy.offlinesupportwithpaging.model.MovieParcel
+import klt.mdy.offlinesupportwithpaging.model.movie.MovieParcel
 import klt.mdy.offlinesupportwithpaging.theme.dimen
 import klt.mdy.offlinesupportwithpaging.ui.MainViewModel
 import klt.mdy.offlinesupportwithpaging.ui.udf.MovieAction

@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import klt.mdy.offlinesupportwithpaging.R
 import klt.mdy.offlinesupportwithpaging.common.Endpoints
-import klt.mdy.offlinesupportwithpaging.model.MovieEntity
+import klt.mdy.offlinesupportwithpaging.model.movie.MovieEntity
 
 
 @Composable

@@ -7,8 +7,8 @@ import androidx.paging.RemoteMediator
 import androidx.room.withTransaction
 import klt.mdy.offlinesupportwithpaging.data.local.MovieDatabase
 import klt.mdy.offlinesupportwithpaging.di.network.api_layer.MovieApiService
-import klt.mdy.offlinesupportwithpaging.model.MovieEntity
-import klt.mdy.offlinesupportwithpaging.model.RemoteKeyEntity
+import klt.mdy.offlinesupportwithpaging.model.movie.MovieEntity
+import klt.mdy.offlinesupportwithpaging.model.movie.RemoteKeyEntity
 import timber.log.Timber
 
 @ExperimentalPagingApi

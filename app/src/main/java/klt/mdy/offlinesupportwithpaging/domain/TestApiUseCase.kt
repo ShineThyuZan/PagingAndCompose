@@ -3,7 +3,7 @@ package klt.mdy.offlinesupportwithpaging.domain
 import klt.mdy.offlinesupportwithpaging.common.Resource
 import klt.mdy.offlinesupportwithpaging.di.network.api_layer.AppApiRepository
 import klt.mdy.offlinesupportwithpaging.di.network.RemoteResource
-import klt.mdy.offlinesupportwithpaging.model.DataObjVos
+import klt.mdy.offlinesupportwithpaging.model.test.DataObjVos
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.flow

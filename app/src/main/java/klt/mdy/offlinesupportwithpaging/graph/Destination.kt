@@ -12,6 +12,7 @@ object ArgsConstants {
 sealed class AppDestination(val route: String) {
     object Splash : AppDestination(route = "splash_screen")
     object Movie : AppDestination(route = "movie_screen")
-    object MovieDetail : AppDestination(route = "movie_detail_screen")
     object TestApi : AppDestination(route = "language_screen")
+    object MovieDetail : AppDestination(route = "movie_detail_screen")
+    object UserInfo : AppDestination(route = "user_info_screen")
 }

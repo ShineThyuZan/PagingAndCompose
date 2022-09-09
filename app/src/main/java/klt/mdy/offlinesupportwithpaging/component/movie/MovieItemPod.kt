@@ -19,7 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.coil.rememberCoilPainter
 import klt.mdy.offlinesupportwithpaging.common.Endpoints
-import klt.mdy.offlinesupportwithpaging.model.MovieEntity
+import klt.mdy.offlinesupportwithpaging.model.movie.MovieEntity
 
 
 @Composable

@@ -20,8 +20,8 @@ import androidx.paging.compose.itemsIndexed
 import klt.mdy.offlinesupportwithpaging.component.*
 import klt.mdy.offlinesupportwithpaging.graph.AppDestination
 import klt.mdy.offlinesupportwithpaging.graph.ArgsConstants
-import klt.mdy.offlinesupportwithpaging.model.MovieEntity
-import klt.mdy.offlinesupportwithpaging.model.MovieParcel
+import klt.mdy.offlinesupportwithpaging.model.movie.MovieEntity
+import klt.mdy.offlinesupportwithpaging.model.movie.MovieParcel
 import klt.mdy.offlinesupportwithpaging.ui.MainViewModel
 import klt.mdy.offlinesupportwithpaging.ui.udf.MovieAction
 import klt.mdy.offlinesupportwithpaging.ui.udf.MovieEvent

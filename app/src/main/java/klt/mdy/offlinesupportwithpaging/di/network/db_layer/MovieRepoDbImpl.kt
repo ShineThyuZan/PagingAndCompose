@@ -7,7 +7,7 @@ import androidx.paging.PagingData
 import klt.mdy.offlinesupportwithpaging.data.local.MovieDatabase
 import klt.mdy.offlinesupportwithpaging.di.network.Constants
 import klt.mdy.offlinesupportwithpaging.di.network.api_layer.MovieApiService
-import klt.mdy.offlinesupportwithpaging.model.MovieEntity
+import klt.mdy.offlinesupportwithpaging.model.movie.MovieEntity
 import klt.mdy.offlinesupportwithpaging.paging.OfflineResourceUseCase
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

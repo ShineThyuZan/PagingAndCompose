@@ -9,17 +9,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import klt.mdy.offlinesupportwithpaging.common.Resource
-import klt.mdy.offlinesupportwithpaging.model.DataObjVos
+import klt.mdy.offlinesupportwithpaging.model.test.DataObjVos
 import klt.mdy.offlinesupportwithpaging.theme.dimen
 
 @Composable
-fun LanguageContent(
+fun MemeContent(
     modifier: Modifier = Modifier,
     titleLarge: String,
     resourceCountries: Resource<List<DataObjVos>>,
-    onItemClicked: (DataObjVos) -> Unit,
+    onItemClicked: () -> Unit,
     onRetry: () -> Unit
 ) {
     Surface(color = MaterialTheme.colorScheme.background) {
@@ -43,7 +42,7 @@ fun LanguageContent(
                         color = MaterialTheme.colorScheme.onBackground,
                         textAlign = TextAlign.Center
                     )
-                    LanguageListView(
+                    MemeListView(
                         languages = resourceCountries.data ?: listOf(),
                         onItemClicked = onItemClicked
                     )
@@ -55,10 +54,10 @@ fun LanguageContent(
 
 
 @Composable
-fun LanguageListView(
+fun MemeListView(
     modifier: Modifier = Modifier,
     languages: List<DataObjVos>,
-    onItemClicked: (DataObjVos) -> Unit
+    onItemClicked: () -> Unit
 ) {
     LazyColumn(
         content = {
@@ -66,17 +65,18 @@ fun LanguageListView(
                 count = languages.size
             ) { index ->
                 val currentItem = languages[index]
-                LanguageItem(
+                MemeItem(
                     title = currentItem.name,
                     description = currentItem.name,
-                    onItemClicked = { onItemClicked(currentItem) }
+                    onItemClicked = { onItemClicked() }
                 )
             }
         }
     )
 }
+
 @Composable
-fun LanguageItem(
+fun MemeItem(
     modifier: Modifier = Modifier,
     title: String,
     description: String,

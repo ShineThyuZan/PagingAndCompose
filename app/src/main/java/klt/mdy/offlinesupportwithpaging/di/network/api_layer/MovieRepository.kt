@@ -2,8 +2,8 @@ package klt.mdy.offlinesupportwithpaging.di.network.api_layer
 
 import androidx.paging.PagingData
 import klt.mdy.offlinesupportwithpaging.di.network.RemoteResource
-import klt.mdy.offlinesupportwithpaging.model.MovieEntity
-import klt.mdy.offlinesupportwithpaging.model.MoviesDTO
+import klt.mdy.offlinesupportwithpaging.model.movie.MovieEntity
+import klt.mdy.offlinesupportwithpaging.model.movie.MoviesDTO
 import kotlinx.coroutines.flow.Flow
 
 interface MovieRepository {

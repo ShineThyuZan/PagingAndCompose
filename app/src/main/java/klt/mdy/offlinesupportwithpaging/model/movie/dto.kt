@@ -1,10 +1,8 @@
- package klt.mdy.offlinesupportwithpaging.model
+ package klt.mdy.offlinesupportwithpaging.model.movie
 
 import kotlinx.serialization.Serializable
-import java.util.*
-import kotlin.random.Random
 
-@Serializable
+ @Serializable
 data class MoviesDTO(
     val page: Int,
     val results: List<MovieData>,

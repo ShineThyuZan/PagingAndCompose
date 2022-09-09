@@ -6,8 +6,8 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import klt.mdy.offlinesupportwithpaging.common.Endpoints
 import klt.mdy.offlinesupportwithpaging.di.network.*
-import klt.mdy.offlinesupportwithpaging.model.MovieEntity
-import klt.mdy.offlinesupportwithpaging.model.MoviesDTO
+import klt.mdy.offlinesupportwithpaging.model.movie.MovieEntity
+import klt.mdy.offlinesupportwithpaging.model.movie.MoviesDTO
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

@@ -7,10 +7,9 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import klt.mdy.offlinesupportwithpaging.component.LanguageScreen
+import klt.mdy.offlinesupportwithpaging.component.MemeScreen
 import klt.mdy.offlinesupportwithpaging.component.movie.MovieScreen
-import klt.mdy.offlinesupportwithpaging.component.movie_detail.MovieDetailScreen
-import klt.mdy.offlinesupportwithpaging.model.MovieParcel
+import klt.mdy.offlinesupportwithpaging.di.network.user_layer.UserInfoScreen
 import klt.mdy.offlinesupportwithpaging.ui.MainViewModel
 
 @SuppressLint("UnrememberedGetBackStackEntry")
@@ -38,26 +37,37 @@ fun NavGraphBuilder.movieNavGraph(
             }
             val movieViewModel = hiltViewModel<MainViewModel>(parentEntry)
 
-            LanguageScreen(navController = navController, vm = movieViewModel)
+            MemeScreen(navController = navController, vm = movieViewModel)
             //    LanguageScreen(vm = movieViewModel, navController = navController)
         }
 
 
-        composable(
-            route = AppDestination.MovieDetail.route,
-        ) {
-            val parentEntry = remember { navController.getBackStackEntry(Routes.MOVIE_ROUTE) }
-            val vm = hiltViewModel<MainViewModel>(parentEntry)
-            val result =
-                navController.previousBackStackEntry?.savedStateHandle?.get<MovieParcel>(
-                    ArgsConstants.MOVIE_VO
-                )
-            MovieDetailScreen(
-                navController = navController,
-                movieParcel = result ?: MovieParcel(),
-                vm = vm
-            )
+        composable(route = AppDestination.UserInfo.route) {
+            val parentEntry = remember {
+                navController.getBackStackEntry(Routes.MOVIE_ROUTE)
+            }
+            val movieViewModel = hiltViewModel<MainViewModel>(parentEntry)
+
+            UserInfoScreen(navController = navController, vm = movieViewModel)
         }
+
+
+        // this parcelable data navigation
+        /*composable(
+              route = AppDestination.MovieDetail.route,
+          ) {
+              val parentEntry = remember { navController.getBackStackEntry(Routes.MOVIE_ROUTE) }
+              val vm = hiltViewModel<MainViewModel>(parentEntry)
+              val result =
+                  navController.previousBackStackEntry?.savedStateHandle?.get<MovieParcel>(
+                      ArgsConstants.MOVIE_VO
+                  )
+              MovieDetailScreen(
+                  navController = navController,
+                  movieParcel = result ?: MovieParcel(),
+                  vm = vm
+              )
+          }*/
 
     }
 }

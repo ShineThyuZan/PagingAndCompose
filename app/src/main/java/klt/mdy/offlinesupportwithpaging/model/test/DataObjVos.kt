@@ -1,4 +1,4 @@
-package klt.mdy.offlinesupportwithpaging.model
+package klt.mdy.offlinesupportwithpaging.model.test
 
 data class DataObjVos(
     val id: String,
