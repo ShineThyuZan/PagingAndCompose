@@ -1,4 +1,4 @@
-package klt.mdy.offlinesupportwithpaging.component
+package klt.mdy.offlinesupportwithpaging.component.movie
 
 import android.os.Build
 import androidx.annotation.RequiresApi

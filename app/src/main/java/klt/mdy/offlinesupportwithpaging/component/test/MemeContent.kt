@@ -1,4 +1,4 @@
-package klt.mdy.offlinesupportwithpaging.component
+package klt.mdy.offlinesupportwithpaging.component.test
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -9,7 +9,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import klt.mdy.offlinesupportwithpaging.common.Resource
+import klt.mdy.offlinesupportwithpaging.component.CommonListItem
 import klt.mdy.offlinesupportwithpaging.model.test.DataObjVos
 import klt.mdy.offlinesupportwithpaging.theme.dimen
 
@@ -88,4 +90,16 @@ fun MemeItem(
         supportingText = description,
         onClickListItem = onItemClicked
     )
+}
+
+@Composable
+@Preview(showBackground = true)
+private fun Preview() {
+    Surface {
+        MemeItem(
+            title = "Me Me Title",
+            description = "Me Me description",
+            onItemClicked = {}
+        )
+    }
 }

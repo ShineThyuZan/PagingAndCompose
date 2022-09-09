@@ -2,12 +2,13 @@ package klt.mdy.offlinesupportwithpaging.di.network.api_layer
 
 import klt.mdy.offlinesupportwithpaging.common.Endpoints
 import klt.mdy.offlinesupportwithpaging.di.network.Constants
-import klt.mdy.offlinesupportwithpaging.model.chat.ProfileInfoDTO
+import klt.mdy.offlinesupportwithpaging.model.user.ProfileInfoDTO
 import klt.mdy.offlinesupportwithpaging.model.movie.MoviesDTO
 import retrofit2.Response
 import retrofit2.http.*
 
 interface MovieApiService {
+
     @GET(Endpoints.MOVIES_UPCOMING)
     suspend fun fetchMovies(
         @Query("api_key") apiKey: String = Endpoints.MOVIE_API_KEY,
@@ -20,7 +21,6 @@ interface MovieApiService {
         @Query("page") page: Int = 1
     ): Response<MoviesDTO>
 
-
     @GET(Endpoints.UPCOMING)
     suspend fun fetchMovie(
         @Query("api_key") apiKey: String = "cdbea55de27a909b4aaa2cfc02eabb75",
@@ -29,8 +29,7 @@ interface MovieApiService {
     ): MoviesDTO
 }
 
-
-interface  UserService{
+interface UserService {
     @FormUrlEncoded
     @POST(Endpoints.PROFILE_INFO)
     suspend fun getProfileInfo(

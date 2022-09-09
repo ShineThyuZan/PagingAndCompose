@@ -1,4 +1,4 @@
-package klt.mdy.offlinesupportwithpaging.component
+package klt.mdy.offlinesupportwithpaging.component.test
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -28,9 +28,7 @@ fun MemeView(
     vm: MainViewModel,
     navController: NavController,
 ) {
-
     LaunchedEffect(key1 = true) {
-
         vm.movieEvent.collect {
             when (it) {
                 MovieEvent.NavigateToUserProfile -> {

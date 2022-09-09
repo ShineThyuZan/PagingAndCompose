@@ -4,7 +4,6 @@ import retrofit2.HttpException
 import retrofit2.Response
 import java.io.IOException
 
-
 sealed class RemoteResource<T>(
     val data: T? = null,
     val message: String? = null

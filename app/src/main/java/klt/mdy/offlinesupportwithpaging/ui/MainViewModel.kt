@@ -12,7 +12,6 @@ import klt.mdy.offlinesupportwithpaging.di.network.db_layer.MovieDbRepository
 import klt.mdy.offlinesupportwithpaging.di.network.user_layer.GetProfileInfoUseCase
 import klt.mdy.offlinesupportwithpaging.domain.TestApiData
 import klt.mdy.offlinesupportwithpaging.domain.TestApiUseCase
-import klt.mdy.offlinesupportwithpaging.model.chat.ProfileInfoVo
 import klt.mdy.offlinesupportwithpaging.ui.udf.MovieAction
 import klt.mdy.offlinesupportwithpaging.ui.udf.MovieEvent
 import klt.mdy.offlinesupportwithpaging.ui.udf.UserState
@@ -29,7 +28,7 @@ class MainViewModel @Inject constructor(
       repository: MovieRepository,*/
 
     private val useCase: TestApiUseCase,
-    private val userUserCase : GetProfileInfoUseCase,
+    private val userUserCase: GetProfileInfoUseCase,
 
 
     repoDb: MovieDbRepository,
@@ -53,7 +52,7 @@ class MainViewModel @Inject constructor(
 
     init {
         getTestApi()
-     getUserFromApi()
+        getUserFromApi()
     }
 
     // action
@@ -118,7 +117,8 @@ class MainViewModel @Inject constructor(
                                 profileInfo = user
                             )
                         )
-                        Timber.tag("profileInformation").d(userState.value.form.profileInfo.username)
+                        Timber.tag("profileInformation")
+                            .d(userState.value.form.profileInfo.username)
                         //setUserToDb(profileInfo = user)
                     }
                 }

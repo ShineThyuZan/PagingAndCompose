@@ -4,7 +4,7 @@ import klt.mdy.offlinesupportwithpaging.di.network.QualifiedAnnotation
 import klt.mdy.offlinesupportwithpaging.di.network.RemoteResource
 import klt.mdy.offlinesupportwithpaging.di.network.api_layer.UserService
 import klt.mdy.offlinesupportwithpaging.di.network.safeApiCall
-import klt.mdy.offlinesupportwithpaging.model.chat.ProfileInfoDTO
+import klt.mdy.offlinesupportwithpaging.model.user.ProfileInfoDTO
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

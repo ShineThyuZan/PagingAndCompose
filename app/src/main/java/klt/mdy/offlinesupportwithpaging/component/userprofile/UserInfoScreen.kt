@@ -1,4 +1,4 @@
-package klt.mdy.offlinesupportwithpaging.di.network.user_layer
+package klt.mdy.offlinesupportwithpaging.component.userprofile
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -29,13 +29,11 @@ fun UserInfoScreen(
     )
 }
 
-
 @Composable
 fun AccountView(
     navController: NavController,
     vm: MainViewModel
 ) {
-
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
     val userInfo = vm.userState.value.form.profileInfo.username
@@ -51,8 +49,10 @@ fun AccountView(
 }
 
 @Composable
-fun AccountContent(modifier: Modifier,
-                   userName: String) {
+fun AccountContent(
+    modifier: Modifier,
+    userName: String
+) {
     Surface(color = Color.Transparent) {
         Box(
             modifier = modifier.fillMaxSize(),
@@ -67,6 +67,9 @@ fun AccountContent(modifier: Modifier,
 @Preview
 private fun AccountPreview() {
     Surface {
-        AccountContent(modifier = Modifier, userName = "Ko Ko Tun In your Area")
+        AccountContent(
+            modifier = Modifier,
+            userName = "Ko Ko Tun In your Area"
+        )
     }
 }

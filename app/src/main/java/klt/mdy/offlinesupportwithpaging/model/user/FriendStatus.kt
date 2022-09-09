@@ -1,4 +1,4 @@
-package klt.mdy.offlinesupportwithpaging.model.chat
+package klt.mdy.offlinesupportwithpaging.model.user
 
 enum class FriendStatus(val status: Int) {
     OTHER_CASE(0),

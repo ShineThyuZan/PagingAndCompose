@@ -1,4 +1,4 @@
-package klt.mdy.offlinesupportwithpaging.model.chat
+package klt.mdy.offlinesupportwithpaging.model.user
 
 import kotlinx.serialization.Serializable
 

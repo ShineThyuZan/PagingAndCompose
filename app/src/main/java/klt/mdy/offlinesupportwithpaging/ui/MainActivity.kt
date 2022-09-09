@@ -6,10 +6,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
 import androidx.compose.material.Surface
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
-import klt.mdy.offlinesupportwithpaging.component.MainScreen
+import klt.mdy.offlinesupportwithpaging.component.movie.MainScreen
 import klt.mdy.offlinesupportwithpaging.theme.OfflineSupportWithPagingTheme
 
 @AndroidEntryPoint

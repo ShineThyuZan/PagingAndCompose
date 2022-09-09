@@ -3,7 +3,7 @@ package klt.mdy.offlinesupportwithpaging.di.network.user_layer
 import klt.mdy.offlinesupportwithpaging.common.Resource
 import klt.mdy.offlinesupportwithpaging.di.network.Constants
 import klt.mdy.offlinesupportwithpaging.di.network.RemoteResource
-import klt.mdy.offlinesupportwithpaging.model.chat.ProfileInfoVo
+import klt.mdy.offlinesupportwithpaging.model.user.ProfileInfoVo
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.flow

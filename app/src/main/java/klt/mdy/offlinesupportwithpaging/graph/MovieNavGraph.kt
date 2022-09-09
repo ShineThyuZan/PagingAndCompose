@@ -7,9 +7,9 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import klt.mdy.offlinesupportwithpaging.component.MemeScreen
+import klt.mdy.offlinesupportwithpaging.component.test.MemeScreen
 import klt.mdy.offlinesupportwithpaging.component.movie.MovieScreen
-import klt.mdy.offlinesupportwithpaging.di.network.user_layer.UserInfoScreen
+import klt.mdy.offlinesupportwithpaging.component.userprofile.UserInfoScreen
 import klt.mdy.offlinesupportwithpaging.ui.MainViewModel
 
 @SuppressLint("UnrememberedGetBackStackEntry")

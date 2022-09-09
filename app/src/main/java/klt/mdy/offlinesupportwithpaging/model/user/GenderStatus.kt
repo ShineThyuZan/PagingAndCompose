@@ -1,4 +1,4 @@
-package klt.mdy.offlinesupportwithpaging.model.chat
+package klt.mdy.offlinesupportwithpaging.model.user
 
 
 enum class GenderStatus(val status: Int) {
