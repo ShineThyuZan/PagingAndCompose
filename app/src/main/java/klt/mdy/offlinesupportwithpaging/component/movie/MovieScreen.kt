@@ -65,6 +65,7 @@ fun MoviesContent(
                         movieParcel
                     )
                     navController.navigate(AppDestination.TestApi.route)
+                    vm.getTestApi()
                 }
                 MovieEvent.ShowDownloadSheet -> {
 

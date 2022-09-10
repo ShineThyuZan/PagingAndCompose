@@ -10,6 +10,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import klt.mdy.offlinesupportwithpaging.common.Resource
 import klt.mdy.offlinesupportwithpaging.di.network.db_layer.MovieDbRepository
 import klt.mdy.offlinesupportwithpaging.di.network.user_layer.GetProfileInfoUseCase
+import klt.mdy.offlinesupportwithpaging.di.network.user_layer.user_info_db.MainUseCase
 import klt.mdy.offlinesupportwithpaging.domain.TestApiData
 import klt.mdy.offlinesupportwithpaging.domain.TestApiUseCase
 import klt.mdy.offlinesupportwithpaging.ui.udf.MovieAction
@@ -29,6 +30,7 @@ class MainViewModel @Inject constructor(
 
     private val useCase: TestApiUseCase,
     private val userUserCase: GetProfileInfoUseCase,
+    private val mainUseCase: MainUseCase,
 
 
     repoDb: MovieDbRepository,
@@ -51,8 +53,9 @@ class MainViewModel @Inject constructor(
     val userState: State<UserState> get() = _userState
 
     init {
-        getTestApi()
-        getUserFromApi()
+      //  getTestApi()
+        // getUserFromApi()
+        getUserFromDb()
     }
 
     // action
@@ -89,10 +92,10 @@ class MainViewModel @Inject constructor(
         }
     }
 
-// this form db  , get api form server
-/*    fun getUserFromDb() {
+    // this form db  , get api form server
+   private fun getUserFromDb() {
         viewModelScope.launch {
-            commonUseCase.getUserFromDb().collect {
+            mainUseCase.getUserFromDb().collect {
                 _userState.value = userState.value.copy(
                     form = userState.value.form.copy(
                         profileInfo = it
@@ -101,7 +104,7 @@ class MainViewModel @Inject constructor(
             }
         }
         getUserFromApi()
-    }*/
+    }
 
 
     private fun getUserFromApi() {
@@ -128,7 +131,7 @@ class MainViewModel @Inject constructor(
 
 
     //request from init
-    private fun getTestApi() {
+     fun getTestApi() {
         viewModelScope.launch {
             _testApiData.value = testApiData.value.copy(
                 languages = Resource.Loading()

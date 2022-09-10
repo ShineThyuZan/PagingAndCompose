@@ -11,6 +11,9 @@ object Constants {
     const val MOVIE_TABLE = "movietable"
     const val REMOTE_KEY_TABLE = "remotekeytable"
 
+    const val USER_PREF_NAME = "user.chat.ds"
+    const val USER_PROTO_NAME = "user.info.ds"
+
 
     const val RESPONSE_SUCCESS = "SUCCESS"
     const val RESPONSE_FAIL = "FAIL"
