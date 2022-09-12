@@ -4,6 +4,7 @@ import klt.mdy.offlinesupportwithpaging.common.Endpoints
 import klt.mdy.offlinesupportwithpaging.di.network.Constants
 import klt.mdy.offlinesupportwithpaging.model.user.ProfileInfoDTO
 import klt.mdy.offlinesupportwithpaging.model.movie.MoviesDTO
+import klt.mdy.offlinesupportwithpaging.model.user.LanguageDTO
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -36,4 +37,7 @@ interface UserService {
         @Field("userId") userId: Long,
         @Field("locale") locale: Int
     ): Response<ProfileInfoDTO>
+
+    @GET(Endpoints.LANGUAGES)
+    suspend fun requestLanguages(): Response<LanguageDTO>
 }

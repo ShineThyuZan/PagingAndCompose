@@ -1,4 +1,4 @@
-package klt.mdy.offlinesupportwithpaging.ui.udf
+package klt.mdy.offlinesupportwithpaging.ui.user_udf
 
 import klt.mdy.offlinesupportwithpaging.model.user.ProfileInfoVo
 

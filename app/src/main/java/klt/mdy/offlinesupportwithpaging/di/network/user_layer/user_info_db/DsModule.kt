@@ -23,8 +23,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object DsModule {
-
-
     @Provides
     @Singleton
     @QualifiedAnnotation.UserPref
@@ -60,8 +58,6 @@ object DsModule {
     ): UserDataStore {
         return UserDataStoreImpl(ds = ds)
     }
-
-
 
     @Provides
     @Singleton

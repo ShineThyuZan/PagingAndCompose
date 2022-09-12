@@ -1,7 +1,11 @@
 package klt.mdy.offlinesupportwithpaging.model.test
 
-data class DataObjVos(
-    val id: String,
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "MeMeListTable")
+data class MemeVos(
+    @PrimaryKey val id: String,
     val name: String,
     val url: String,
     val width: Int,

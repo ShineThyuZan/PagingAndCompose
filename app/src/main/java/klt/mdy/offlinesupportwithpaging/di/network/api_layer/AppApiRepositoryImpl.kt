@@ -1,8 +1,10 @@
 package klt.mdy.offlinesupportwithpaging.di.network.api_layer
 
+import klt.mdy.offlinesupportwithpaging.data.local.MovieDatabase
 import klt.mdy.offlinesupportwithpaging.di.network.QualifiedAnnotation
 import klt.mdy.offlinesupportwithpaging.di.network.RemoteResource
 import klt.mdy.offlinesupportwithpaging.di.network.safeApiCall
+import klt.mdy.offlinesupportwithpaging.model.test.MemeVos
 import klt.mdy.offlinesupportwithpaging.model.test.TestDTO
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
@@ -12,9 +14,10 @@ import javax.inject.Inject
 
 class AppApiRepositoryImpl @Inject constructor(
     private val api: AppApiService,
+    private val db : MovieDatabase,
     @QualifiedAnnotation.Io private val io: CoroutineDispatcher,
 ) : AppApiRepository {
-    override suspend fun testApi(): Flow<RemoteResource<TestDTO>> {
+    override suspend fun memeApi(): Flow<RemoteResource<TestDTO>> {
         return flow {
             emit(
                 safeApiCall {
@@ -22,5 +25,13 @@ class AppApiRepositoryImpl @Inject constructor(
                 }
             )
         }.flowOn(io)
+    }
+
+    override suspend fun saveMemeList(memeList: List<MemeVos>) {
+       db.MeMeListDao().inputMemeList(memeList)
+    }
+
+    override suspend fun retrieveMeMeList(): Flow<List<MemeVos>> {
+       return db.MeMeListDao().outputMemes()
     }
 }

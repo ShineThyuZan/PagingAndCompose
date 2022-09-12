@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import klt.mdy.offlinesupportwithpaging.data.local.MovieDatabase
 import klt.mdy.offlinesupportwithpaging.di.network.api_layer.*
 import klt.mdy.offlinesupportwithpaging.di.network.user_layer.UserApiRepository
 import klt.mdy.offlinesupportwithpaging.di.network.user_layer.UserApiRepositoryImpl
@@ -13,17 +14,19 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object RepositoryModule {
-    //todo next repo  add in this scope
 
+    //todo next repo  add in this scope
     @Provides
     @Singleton
     fun provideAuthApiRepository(
         api: AppApiService,
         @QualifiedAnnotation.Io io: CoroutineDispatcher,
+        db: MovieDatabase,
     ): AppApiRepository {
         return AppApiRepositoryImpl(
             api = api,
             io = io,
+            db = db
         )
     }
 

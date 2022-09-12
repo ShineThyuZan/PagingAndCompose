@@ -23,8 +23,8 @@ import klt.mdy.offlinesupportwithpaging.graph.ArgsConstants
 import klt.mdy.offlinesupportwithpaging.model.movie.MovieEntity
 import klt.mdy.offlinesupportwithpaging.model.movie.MovieParcel
 import klt.mdy.offlinesupportwithpaging.ui.MainViewModel
-import klt.mdy.offlinesupportwithpaging.ui.udf.MovieAction
-import klt.mdy.offlinesupportwithpaging.ui.udf.MovieEvent
+import klt.mdy.offlinesupportwithpaging.ui.movie_udf.MovieAction
+import klt.mdy.offlinesupportwithpaging.ui.movie_udf.MovieEvent
 import kotlinx.coroutines.flow.collectLatest
 
 
@@ -65,11 +65,9 @@ fun MoviesContent(
                         movieParcel
                     )
                     navController.navigate(AppDestination.TestApi.route)
-                    vm.getTestApi()
+                    vm.getMeMEApi()
                 }
-                MovieEvent.ShowDownloadSheet -> {
-
-                }
+                MovieEvent.ShowDownloadSheet -> {}
             }
         }
     }

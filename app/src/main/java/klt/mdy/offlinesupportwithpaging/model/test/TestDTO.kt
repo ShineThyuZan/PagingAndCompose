@@ -15,8 +15,8 @@ data class TestDTO(
             val height: Int,
             val box_count: Int
         ) {
-            fun toVo(): DataObjVos {
-                return DataObjVos(
+            fun toVo(): MemeVos {
+                return MemeVos(
                     id = id,
                     name = name,
                     url = url,

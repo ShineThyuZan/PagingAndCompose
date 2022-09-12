@@ -12,14 +12,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import klt.mdy.offlinesupportwithpaging.common.Resource
 import klt.mdy.offlinesupportwithpaging.component.CommonListItem
-import klt.mdy.offlinesupportwithpaging.model.test.DataObjVos
+import klt.mdy.offlinesupportwithpaging.model.test.MemeVos
 import klt.mdy.offlinesupportwithpaging.theme.dimen
 
 @Composable
 fun MemeContent(
     modifier: Modifier = Modifier,
     titleLarge: String,
-    resourceCountries: Resource<List<DataObjVos>>,
+    resourceCountries: Resource<List<MemeVos>>,
     onItemClicked: () -> Unit,
     onRetry: () -> Unit
 ) {
@@ -58,7 +58,7 @@ fun MemeContent(
 @Composable
 fun MemeListView(
     modifier: Modifier = Modifier,
-    languages: List<DataObjVos>,
+    languages: List<MemeVos>,
     onItemClicked: () -> Unit
 ) {
     LazyColumn(

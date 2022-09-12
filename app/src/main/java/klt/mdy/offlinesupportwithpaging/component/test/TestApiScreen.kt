@@ -9,8 +9,8 @@ import klt.mdy.offlinesupportwithpaging.R
 import klt.mdy.offlinesupportwithpaging.graph.AppDestination
 import klt.mdy.offlinesupportwithpaging.internet.ConnectivityState
 import klt.mdy.offlinesupportwithpaging.ui.MainViewModel
-import klt.mdy.offlinesupportwithpaging.ui.udf.MovieAction
-import klt.mdy.offlinesupportwithpaging.ui.udf.MovieEvent
+import klt.mdy.offlinesupportwithpaging.ui.meme_udf.MeMeEvent
+import klt.mdy.offlinesupportwithpaging.ui.meme_udf.MemeAction
 
 
 @Composable
@@ -32,22 +32,21 @@ fun MemeView(
     navController: NavController,
 ) {
     LaunchedEffect(key1 = true) {
-        vm.getTestApi()
-        vm.movieEvent.collect {
+        vm.getMeMEApi()
+        vm.getLanguages()
+
+        vm.memeEvent.collect {
             when (it) {
-                MovieEvent.NavigateToUserProfile -> {
+                MeMeEvent.NavigateToUserProfile -> {
                     navController.navigate(AppDestination.UserInfo.route)
                 }
             }
         }
     }
-
-
-
     MemeContent(
         titleLarge = stringResource(id = R.string.app_name),
         onItemClicked = {
-            vm.onMovieAction(MovieAction.ClickMeMeItem)
+            vm.onMeMeAction(MemeAction.ClickMeMeItem)
         },
         resourceCountries = vm.testApiData.value.languages,
         onRetry = {}

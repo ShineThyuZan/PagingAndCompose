@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             OfflineSupportWithPagingTheme {
                 Surface(content = {
-                   val navController = rememberNavController()
+                    val navController = rememberNavController()
                     MainScreen(navController)
                 })
             }

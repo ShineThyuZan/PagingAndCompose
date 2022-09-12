@@ -16,4 +16,8 @@ object Endpoints {
     const val USER_BASE_URL = "http://192.168.100.100:8080/"
     const val PROFILE_INFO = "socialapp/profile/info"
 
+    private const val PATH = "socialapp/"
+    private const val MASTER = PATH + "master/"
+    const val LANGUAGES = MASTER + "languages"
+
 }

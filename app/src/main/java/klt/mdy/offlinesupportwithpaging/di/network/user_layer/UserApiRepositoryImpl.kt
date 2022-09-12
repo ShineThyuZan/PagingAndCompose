@@ -4,6 +4,7 @@ import klt.mdy.offlinesupportwithpaging.di.network.QualifiedAnnotation
 import klt.mdy.offlinesupportwithpaging.di.network.RemoteResource
 import klt.mdy.offlinesupportwithpaging.di.network.api_layer.UserService
 import klt.mdy.offlinesupportwithpaging.di.network.safeApiCall
+import klt.mdy.offlinesupportwithpaging.model.user.LanguageDTO
 import klt.mdy.offlinesupportwithpaging.model.user.ProfileInfoDTO
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
@@ -15,6 +16,8 @@ class UserApiRepositoryImpl @Inject constructor(
     private val api: UserService,
     @QualifiedAnnotation.Io private val io: CoroutineDispatcher
 ) : UserApiRepository {
+
+
     override suspend fun getProfileInfo(
         userId: Long,
         locale: Int
@@ -30,5 +33,15 @@ class UserApiRepositoryImpl @Inject constructor(
             )
         }.flowOn(io)
     }
+    override suspend fun languages(locale: Int): Flow<RemoteResource<LanguageDTO>> {
+        return flow {
+            emit(
+                safeApiCall {
+                    api.requestLanguages()
+                }
+            )
+        }.flowOn(io)
+    }
+
 
 }
